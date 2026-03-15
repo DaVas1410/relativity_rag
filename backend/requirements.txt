@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-ollama
+langchain-chroma
+pdf2image
+pytesseract
+pydantic
+pypdfscikit-learn

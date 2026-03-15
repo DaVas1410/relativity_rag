@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python Backend
+/backend/venv
+venv/
+__pycache__/
+*.pyc
+
+# RAG Data (DO NOT UPLOAD)
+/data
+/vector_store
+/vector_store_python
+*.pdf
+*.db
+*.sqlite3
+/metrics
