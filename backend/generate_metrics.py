@@ -8,10 +8,10 @@ from sklearn.decomposition import PCA
 from langchain_chroma import Chroma
 from langchain_ollama import OllamaEmbeddings
 
-# Set aesthetic styling
-plt.style.use("dark_background")
+# Set aesthetic styling for white background
+plt.style.use("default")
 sns.set_theme(
-    style="darkgrid", rc={"axes.facecolor": "#0a0a0a", "figure.facecolor": "#050505"}
+    style="whitegrid", rc={"axes.facecolor": "#ffffff", "figure.facecolor": "#ffffff"}
 )
 
 VECTOR_STORE_DIR = os.path.join("..", "vector_store_python")
@@ -94,13 +94,13 @@ def generate_vector_space_plot():
     plt.title(
         "Latent Space Topology: RAG Embeddings (nomic-embed-text)",
         fontsize=16,
-        color="white",
+        color="black",
         pad=20,
     )
-    plt.xlabel("Principal Component 1", color="gray")
-    plt.ylabel("Principal Component 2", color="gray")
+    plt.xlabel("Principal Component 1", color="black")
+    plt.ylabel("Principal Component 2", color="black")
     plt.legend(
-        frameon=True, facecolor="#18181b", edgecolor="#3f3f46", labelcolor="white"
+        frameon=True, facecolor="#ffffff", edgecolor="#cccccc", labelcolor="black"
     )
 
     plt.tight_layout()
@@ -124,20 +124,25 @@ def generate_performance_metrics():
 
     plt.figure(figsize=(10, 6))
     sns.barplot(
-        data=df, x="Chunk Size (Tokens)", y="Retrieval Latency (s)", palette="mako"
+        data=df,
+        x="Chunk Size (Tokens)",
+        y="Retrieval Latency (s)",
+        hue="Chunk Size (Tokens)",
+        palette="mako",
+        legend=False,
     )
     plt.title(
         "ChromaDB Vector Retrieval Latency vs Chunk Size",
         fontsize=14,
-        color="white",
+        color="black",
         pad=15,
     )
-    plt.ylabel("Latency (seconds)", color="gray")
-    plt.xlabel("Document Chunk Size", color="gray")
+    plt.ylabel("Latency (seconds)", color="black")
+    plt.xlabel("Document Chunk Size", color="black")
 
     # Add value labels
     for i, v in enumerate(retrieval_times):
-        plt.text(i, v + 0.01, f"{v}s", color="white", ha="center")
+        plt.text(i, v + 0.01, f"{v}s", color="black", ha="center")
 
     plt.tight_layout()
     plt.savefig(
@@ -178,13 +183,13 @@ def generate_confidence_scores():
         linewidth=2,
     )
     plt.title(
-        "Semantic Similarity Distribution (Nomic-Embed-Text)",
+        "Semantic Similarity Distribution (Nomic-Embed-Text)\nCosine Similarity Scores",
         fontsize=14,
-        color="white",
+        color="black",
         pad=15,
     )
-    plt.xlabel("Cosine Similarity Score", color="gray")
-    plt.ylabel("Density", color="gray")
+    plt.xlabel("Cosine Similarity Score", color="black")
+    plt.ylabel("Density", color="black")
 
     plt.tight_layout()
     plt.savefig(
