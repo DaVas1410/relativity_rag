@@ -324,7 +324,7 @@ export default function Home() {
             )}
           </div>
         ) : (
-          <div className="flex-1 flex flex-col pt-16 relative">
+          <div className="flex-1 flex flex-col pt-16 relative min-h-0">
             {/* Normal Chat View - Centered and clean */}
             <div 
               ref={scrollRef}
