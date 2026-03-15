@@ -356,9 +356,9 @@ export default function Home() {
                       </div>
                       
                       {m.role === "user" ? (
-                        <p className="text-[15px] leading-relaxed text-zinc-200 whitespace-pre-wrap font-light">{m.content}</p>
+                        <p className="text-[17px] leading-relaxed text-zinc-200 whitespace-pre-wrap font-light">{m.content}</p>
                       ) : (
-                        <div className="prose prose-invert prose-zinc max-w-none prose-p:leading-relaxed prose-p:text-[15px] prose-p:font-light prose-pre:bg-[#0a0a0a] prose-pre:border prose-pre:border-white/5 prose-math:text-zinc-100">
+                        <div className="prose prose-invert prose-zinc max-w-none text-[17px] prose-p:leading-relaxed prose-p:text-[17px] prose-p:font-light prose-pre:bg-[#0a0a0a] prose-pre:border prose-pre:border-white/5 prose-math:text-zinc-100 prose-li:text-[17px] prose-headings:text-zinc-100">
                           {m.content.length > 0 ? (
                             <ReactMarkdown
                               remarkPlugins={[remarkMath]}
